@@ -1,0 +1,78 @@
+.CheckoutProgressComponent{
+    $progressBarHeight: 5px;
+    $activeColor: #A82222;
+    $inactiveColor: #E5E5E5;
+    $inactiveTextColor: #9C9C9C;
+    $progressBarColor: #A82222;
+    $circleSize: 40px;
+    $circleMargin: 5px;
+    $activeProgressColor: white;
+
+    div{
+        display: inline-table;
+        text-align: center;
+    }
+
+    p{
+        display: inline-table;
+        text-align: center;
+    }
+
+    .firstProgressBar{
+        background-color: $progressBarColor;
+        height: $progressBarHeight;
+        width: 100px;
+        vertical-align: middle;
+    }
+
+    .shippingCircle {
+        width: $circleSize;
+        height: $circleSize;
+        line-height: $circleSize;
+        text-align: center;
+        color: $inactiveTextColor;
+        background: $inactiveColor;
+        border-radius: 50%;
+        margin-left: $circleMargin;
+        margin-right: $circleMargin;
+    }
+
+    .activeTitle{
+        font-weight: bold;
+    }
+
+    .shippingCircleActive{
+        background: $activeColor;
+        color: $activeProgressColor;
+    }
+
+    .shippingCircleCompleted{
+        background: $activeColor;
+        color: $activeProgressColor;
+    }
+
+    .shippingStage{
+        text-align: center;
+    }
+
+    .progressBar{
+        background-color: $inactiveColor;
+        height: $progressBarHeight;
+        width: calc(((100% - (#{$circleSize * 5})) / 3));
+        vertical-align: middle;
+        background-position: right bottom;
+    }
+
+    .progressBarActive{
+        height: $progressBarHeight;
+        background-color: $activeColor;
+        background: linear-gradient(to right, $activeColor 50%, white 50%);
+        background-size: 200% 100%;
+        background-position: left bottom;
+        transition: all .5s ease-out;
+    }
+
+    .stepTitle{
+        display: block;
+    }
+}
