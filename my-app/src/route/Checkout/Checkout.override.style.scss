@@ -1,0 +1,10 @@
+.Checkout {
+    &::before {
+        @include after-mobile {
+            content: none;
+            background: var(--breadcrumbs-background);
+            min-height: var(--breadcrumbs-height);
+            display: block;
+        }
+    }
+}

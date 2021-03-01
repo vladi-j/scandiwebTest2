@@ -4,9 +4,14 @@
     $inactiveColor: #E5E5E5;
     $inactiveTextColor: #9C9C9C;
     $progressBarColor: #A82222;
-    $circleSize: 40px;
     $circleMargin: 5px;
+    $circleSize: 40px;
     $activeProgressColor: white;
+    $outerBarWidth: calc(((100% - (#{$circleSize * 5})) / 2.5));
+    $stepTitleWidth: 135px;
+
+    padding: 30px 0 50px 0;
+    background-color: #F3F3F3;
 
     div{
         display: inline-table;
@@ -14,8 +19,9 @@
     }
 
     p{
-        display: inline-table;
-        text-align: center;
+        position: absolute;
+        width: $stepTitleWidth;
+        margin-left: -$circleSize;
     }
 
     .firstProgressBar{
@@ -58,7 +64,7 @@
     .progressBar{
         background-color: $inactiveColor;
         height: $progressBarHeight;
-        width: calc(((100% - (#{$circleSize * 5})) / 3));
+        width: calc((100% - (#{$outerBarWidth} * 2)) - 2 * #{$circleSize} - 4 * #{$circleMargin});
         vertical-align: middle;
         background-position: right bottom;
     }
@@ -70,6 +76,14 @@
         background-size: 200% 100%;
         background-position: left bottom;
         transition: all .5s ease-out;
+    }
+
+    .progressBar:first-child {
+        width: $outerBarWidth;
+    }
+
+    .progressBar:last-child {
+        width: $outerBarWidth;
     }
 
     .stepTitle{

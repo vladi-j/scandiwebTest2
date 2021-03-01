@@ -2,7 +2,14 @@ import CheckoutProgressComponent from 'Component/CheckoutProgress/CheckoutProgre
 import ContentWrapper from 'Component/ContentWrapper';
 import { BILLING_STEP, DETAILS_STEP, SHIPPING_STEP } from 'Route/Checkout/Checkout.config';
 import { Checkout as SourceCheckout }
+    // eslint-disable-next-line import/no-duplicates
     from 'SourceRoute/Checkout/Checkout.component';
+
+// import the original component so that base styles are applied first
+// eslint-disable-next-line import/no-duplicates
+import 'SourceRoute/Checkout/Checkout.component';
+// import our modified styles to override some of the default ones
+import './Checkout.override.style.scss';
 /** @namespace myApp/Route/Checkout/Component/CheckoutComponent */
 export class CheckoutComponent extends SourceCheckout {
     renderProgressStep() {
